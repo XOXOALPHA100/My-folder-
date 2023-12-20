@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Front Page Styles */
+        #front-page {
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1.front-page {
+            font-size: 2.5em;
+            color: #ff66b2;
+            text-shadow: 2px 2px 4px #ccc;
+        }
+
+        button.front-page {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Birthday Message Styles */
+        #birthday-page {
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            display: none;
+        }
+
+        h1.birthday-page {
+            font-size: 2.5em;
+            color: #ff66b2;
+            text-shadow: 2px 2px 4px #ccc;
+        }
+
+        p.birthday-page {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin: 10px 0;
+        }
+
+        blockquote.birthday-page {
+            font-style: italic;
+            color: #555;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="front-page">
+        <h1 class="front-page">Welcome to the Birthday Surprise!</h1>
+        <p>Click the button below to start the celebration.</p>
+        <button class="front-page" onclick="showBirthdayPage()">Start</button>
+    </div>
+
+    <div id="birthday-page">
+        <div id="particles-js"></div>
+        <h1 class="birthday-page">🎉 Happy Birthday to the most wonderful girlfriend! 🎂</h1>
+        <p class="birthday-page">Wishing you a day filled with joy and unforgettable moments.</p>
+        <blockquote class="birthday-page">"May your day be as special as you are, and may the year ahead bring you all the happiness you deserve."</blockquote>
+        <p class="birthday-page">Love you always!</p>
+    </div>
+
+    <script>
+        function showBirthdayPage() {
+            document.getElementById('front-page').style.display = 'none';
+            document.getElementById('birthday-page').style.display = 'block';
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#ffcc00' },
+                    shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 }, image: { src: 'img/github.svg', width: 100, height: 100 } },
+                    opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                    size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                    line_linked: { enable: true, distance: 150, color: '#ffcc00', opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                    modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200 } }
+                },
+                retina_detect: true
+            });
+        }
+    </script>
+</body>
+</html>
